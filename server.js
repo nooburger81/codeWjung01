@@ -17,7 +17,7 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// const models = require('./models');
+const models = require('./models');
 app.use(controllers);
 
 sequelize.sync({force: false}).then(() => {
