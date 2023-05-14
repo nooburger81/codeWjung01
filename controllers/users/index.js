@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
   res.json('JUICY');
 })
 
-router.post('/sign-up', async (req, res) => {
+router.post("/sign-up", async (req, res) => {
     const { username, email, password } = req.body;
     const userData = await User.create({
         username: username,
