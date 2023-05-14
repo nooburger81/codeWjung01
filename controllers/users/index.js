@@ -14,6 +14,6 @@ router.post('/sign-up', async (req, res) => {
         email: email
 });
     res.json(userData);
-})
+});
 
 module.exports = router;
