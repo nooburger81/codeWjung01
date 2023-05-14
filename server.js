@@ -1,11 +1,13 @@
 const express = require('express');
-const routes = require('./routes');
-const PORT = process.env.PORT || 3001;
+const controllers = require('./controllers');
+const sequelize = require('./config/connection');
+const PORT = 3001;
 const app = express();
 
-app.use(routes);
+app.use(controllers);
 
-
-app.listen(PORT, () => {
-    console.log(`STOP CRYING`);
+sequelize.sync({}).then(() => {
+    app.listen(PORT, () => {
+        console.log(`STOP CRYING`);
 })
+});
